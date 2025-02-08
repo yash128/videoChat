@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.TilePane?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0"
+            stylesheets="@/styles.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <bottom>
+      <HBox prefHeight="77.0" prefWidth="757.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="startVid" mnemonicParsing="false" onAction="#startVid" text="start video" />
+            <Button fx:id="stopVid" mnemonicParsing="false" onAction="#stopVid" text="stop video" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox prefHeight="210" prefWidth="945.0"
+            style="-fx-background-color: red;" stylesheets="@../styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="TOP_RIGHT" onAction="#onThreadsDemand"
+                    mnemonicParsing="false" text="move right" fx:id="left">
+            </Button>
+            <ScrollPane HBox.hgrow="ALWAYS" fx:id="scrollPane">
+               <HBox fx:id="groupBar">
+                  <children></children>
+               </HBox>
+            </ScrollPane>
+            <Button mnemonicParsing="false" text="move left" fx:id="right"
+                    onAction="#onThreadsDemand">
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ImageView fx:id="mainImg" fitHeight="531.0" fitWidth="1199.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
